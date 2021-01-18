@@ -1,0 +1,42 @@
+*{
+    font-size: 30px;
+}
+.containerAll{
+    margin: 0 auto;
+    border: 1px solid #000000;
+    border-radius: 3%;
+    height: 2452px;
+    width: 1714px;
+}
+.header{
+    margin: 73px 88px;
+    display: flex;
+    position: relative;
+}
+.userName{
+    font-weight: bold;
+    font-size: 60px;
+    margin-bottom:  0px;
+    padding: 0px 0px;
+}
+
+.avatarImg{
+    border-radius: 50%;    
+    margin-right: 64px;
+}
+
+.optionImg{
+    position: absolute;
+    right: 0px;
+    margin: auto;
+    top: 25%;
+}
+
+.mainImg{
+    margin: 0 94px;
+}
+.underImg{
+    margin: 40px 122px 0 90px;
+    display: flex;
+    position: relative;
+}
