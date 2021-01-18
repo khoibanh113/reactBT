@@ -1,5 +1,16 @@
+@import url(//db.onlinewebfonts.com/c/1fc9855554fb3b6b013fc8786b2f2f69?family=Copyright+Klim+Type+Foundry);
 *{
-    font-size: 30px;
+    font-family: ﻿FoundersGrotesk-Regular,﻿AdobeInvisFont,﻿MyriadPro-Regular;
+    color: rgba(73, 73, 75, 255);
+}
+.Name{
+    text-align: left;
+    font-size: 62.5pt;
+    font-weight: bold;
+}
+.placehere{
+    font-size: 40pt;
+    font-weight: normal;
 }
 .containerAll{
     margin: 0 auto;
@@ -13,12 +24,12 @@
     display: flex;
     position: relative;
 }
-.userName{
+/* .userName{
     font-weight: bold;
     font-size: 60px;
     margin-bottom:  0px;
     padding: 0px 0px;
-}
+} */
 
 .avatarImg{
     border-radius: 50%;    
@@ -35,8 +46,54 @@
 .mainImg{
     margin: 0 94px;
 }
+.underImg > img{
+    width: 118px;
+    height: 110px;
+}
 .underImg{
     margin: 40px 122px 0 90px;
     display: flex;
     position: relative;
+}
+.underImg img:not(:first-child):not(:last-child){
+    margin-left: 86px ;
+}
+.underImg img:last-child{
+    position: absolute;
+    right: 0px;
+}
+.slide{
+    position: absolute;
+    margin: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.view{
+    font-family: ﻿FoundersGrotesk-Regular,﻿AdobeInvisFont,MyriadPro-Regular;
+    margin: 44px auto 0px 94px;
+    font-size: 62.5pt;
+}
+.userStatus{
+    font-family: ﻿FoundersGrotesk-Regular,﻿AdobeInvisFont,MyriadPro-Regular;
+    font-size: 62.5pt;
+    /* margin-top: 22px; */
+    margin-left: 94px;
+}
+a{
+    color: blue;
+    margin-left: 20px;
+}
+.comment{
+    font-family: ﻿FoundersGrotesk-Regular,﻿AdobeInvisFont,MyriadPro-Regular;
+    font-size: 50pt;
+    margin-top: 22px;
+    margin-left: 94px;
+    color: #a9aaad;
+}
+.time{
+    font-family: ﻿FoundersGrotesk-Light,﻿AdobeInvisFont,﻿MyriadPro-Regular;
+    font-size: 30pt;
+    margin: 45px 0 0 94px;
+    color: #d9dadb;
 }
