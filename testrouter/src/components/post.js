@@ -1,51 +1,35 @@
-import React from 'react'
+import React,{useEffect , useState} from 'react'
 import { BrowserRouter as Router, Route,Link,Switch, Redirect  } from 'react-router-dom'
 import Child from './child.js';
-// function Child({ match }) {
-//     console.log(match);
-//     return (
-//         <div>
-//             <h3>ID: {match.params.id}</h3>
-//         </div>
-//     )
-// }
+
   
-class post extends React.Component {
-    state = {
-        posts: [
-            {
-                id: 1,
-                title: "Hello Blog World!"
-            },
-            {
-                id: 2,
-                title: "My second post"
-            },
-            {
-                id: 3,
-                title: "What is React Router?"
-            }
-        ]
+function Post() {
+
+    useEffect(()=>{
+        fetchItem();
+    },[]);
+
+    const [items,setItems] = useState([]);
+
+    const fetchItem = async () =>{
+        const data = await fetch('https://fortnite-api.theapinetwork.com/store/get');
+        
+        const items = await data.json();
+        console.log(items);
+        setItems(items.data);
     }
   
-    render() {
-        const { posts } = this.state;
-        return (
-            <Router>
-                <div className='posts'>
-                    <h1>Posts List</h1>
-                    <ul>
-                        {posts.map(post => (
-                            <li key={post.id}>
-                                <Link to={`/post/${post.id}`} >{post.title}</Link>
-                            </li>
-                        ))}
-                    </ul>
-                    <Route path='/post/:id' component={Child} />
-                </div>
-            </Router>
-        )
-    }
+    return(
+        <div>
+            {items.map(item =>(
+                <h1 key={item.itemId}>
+                    <Link to={`/post/${item.itemId}`}>
+                    {item.item.name}
+                    </Link>
+                </h1>
+            ))}
+        </div>
+    )
   }
 
-export default post;
+export default Post;

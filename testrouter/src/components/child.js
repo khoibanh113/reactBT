@@ -1,16 +1,38 @@
-import { render } from '@testing-library/react';
-import React from 'react';
+import React,{useEffect , useState} from 'react'
+import { BrowserRouter as Router, Route,Link,Switch, Redirect  } from 'react-router-dom'
+import Child from './child.js';
 
-class child extends React.Component {
-    constructor(props){
-        super(props);
-    }
-    render(){
-        const collectionId = this.props.match && this.props.match.params && this.props.match.params.id;
-        return(
-            <h1>{collectionId}</h1>
-        )
-    }
-}
+  
+function Post({match}) {
 
-export default child;
+    useEffect(()=>{
+        fetchItem();
+        // console.log(match)
+    },[]);
+
+    const [item,setItem] = useState({
+        item:{
+            name:'',
+            images:{
+                icon:'',
+            }
+        },
+    });
+
+    const fetchItem = async () =>{
+        const fetchItem = await fetch(`https://fortnite-api.theapinetwork.com/item/get?id=${match.params.id}`);
+        
+        const item = await fetchItem.json();
+        console.log(item.data);
+        setItem(item.data);
+    }
+  
+    return(
+        <div>
+            <h1>{item.item.name}</h1> 
+            <img src={item.item.images.icon} alt="" /> 
+        </div>
+    )
+  }
+
+export default Post;
