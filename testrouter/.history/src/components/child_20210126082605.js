@@ -31,8 +31,7 @@ function Post({match}) {
         <div>
             <h1>{item.item.name}</h1> 
             <img src={item.item.images.icon} alt="" /> 
-            <Link to="/Post" >Back</Link>
-            <Link to="/" >HomePage</Link>
+            <Link to="/" component={Home} >HomePage</Link>
         </div>
     )
   }
